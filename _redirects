@@ -1,8 +1,12 @@
 # API 요청을 Workers로 라우팅
 /api/* https://your-worker-domain.workers.dev/api/:splat 200
 
-# admin.html을 /admin 경로로 접근
+# admin.html을 /admin 경로로 접근 (정확한 매치)
 /admin /admin.html 200
 
-# 기본 라우팅
-/* /index.html 200
+# img-artists 이미지들을 R2로 리다이렉트
+img-artists/* https://your-r2-domain.com/img-artists/:splat 302
+
+# 기본 라우팅 (특정 경로가 매치되지 않을 때만)
+/index.html /index.html 200
+/ /index.html 200
