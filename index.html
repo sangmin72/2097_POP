@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Arclead Entertainment</title>
+<!--
+
+Arclead Entertainment
+
+-->
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                  <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome-all.min.css">                <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>                       <!-- http://kenwheeler.github.io/slick/ -->
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/tooplate-style.css">                               <!-- Templatemo style -->
+
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this in a modern browser such as latest version of Chrome or Microsoft Edge.");</script>
+    
+    <style>
+        .artist-item {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .artist-name {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .artist-item:hover .artist-name {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tm-slider-img {
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .artist-item:hover .tm-slider-img {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* 필모그래피 테이블 스타일 */
+        .filmography-section {
+            color: white;
+        }
+        
+        .filmography-section h5 {
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .filmography-section .table {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .filmography-section .table th {
+            background: rgba(102, 126, 234, 0.8);
+            color: white;
+            border: none;
+            font-weight: 600;
+            padding: 12px 15px;
+            font-size: 13px;
+        }
+        
+        .filmography-section .table td {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            font-size: 13px;
+        }
+        
+        .filmography-section .table tbody tr:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .filmography-section .table-responsive {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="tm-bg"></div>
+    <div id="tm-wrap">
+        <div class="tm-main-content">
+            <div class="container tm-site-header-container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-md-col-xl-6 mb-md-0 mb-sm-4 mb-4 tm-site-header-col">
+                        <div class="tm-site-header">
+                            <h1 class="mb-4">Arclead Entertainment</h1>
+                            <img src="img/underline.png" class="img-fluid mb-4">
+                            <p>꿈과 열정을 가진 아티스트들과 함께 새로운 도전을 만들어가는 엔터테인먼트 회사</p>        
+                        </div>                        
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="content">
+                            <div class="grid">
+                                <div class="grid__item" id="home-link">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-home fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Company</span>
+                                            <div class="product__bg"></div>        
+                                        </div>                                    
+                                        <div class="product__description">
+                                            <div class="row mb-3">
+                                                <div class="col-12">
+                                                    <h2 class="tm-page-title">Arclead Entertainment</h2>        
+                                                </div>
+                                            </div>                                        
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <img src="img/com_img/com_image.jpg" class="img-fluid mb-3">
+                                                    <p>아크리드는 예술적인 감각으로 고급스럽고 세련되게 안내하다는 뜻을 가지고 있으며, 소속배우들을 하나의 목표를 향해 잘 이끌어 갈려고 하는 회사입니다.</p>
+                                                    <p>열정 넘치고 잠재력을 가진 아티스트를 발굴하고 성장 시킬려고 하는 매니지먼트사로서 새로운 기회를 모색, 요즘 시대에 발맞춰 트렌디하게 예술과 비지니스의 조화를 통한 새로운 도전, 앞으로 나아가는 매니지먼트사가 되겠습니다.</p>    
+                                                </div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <div class="address-info mb-3">
+                                                        <h5 class="mb-3">연락처 정보</h5>
+                                                        <p><strong>주소:</strong> 서울특별시 성동구 연무장5가길 25, SK V1 Tower 705호</p>
+                                                        <p><strong>지하철:</strong> 2호선 뚝섬역 1번 출구에서 도보 5분</p>
+                                                        <p><strong>팩스:</strong> 0504-388-7134</p>
+                                                        <p><strong>이메일:</strong> arclead-ent@naver.com</p>
+                                                        <p class="text-muted small">주차 공간이 제한적이니 대중교통 이용을 권합니다.</p>
+                                                    </div>
+                                                    <img src="img/com_img/com_description.jpg" class="img-fluid">
+                                                </div>                                        
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__item">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-users fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Our Artist</span>
+                                            <div class="product__bg"></div>             
+                                        </div>                                                                 
+                                        <div class="product__description">
+                                            <div class="p-sm-4 p-2">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <h2 class="tm-page-title">Our Artists</h2>        
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="p-sm-4 p-2 tm-img-container">
+                                                            <div class="tm-img-slider" id="tmImgSlider">
+                                                              <div class="artist-item">
+                                                                <a href="#" class="tm-slider-img-link" onclick="openTeamPopup(event, '김시경')" data-artist="김시경">
+                                                                  <img src="img-artists/김시경_main.jpg" alt="김시경" class="img-fluid tm-slider-img">
+                                                                  <div class="artist-name">김시경</div>
+                                                                </a>
+                                                              </div>
+                                                              <div class="artist-item">
+                                                                <a href="#" class="tm-slider-img-link" onclick="openTeamPopup(event, '김효연')" data-artist="김효연">
+                                                                  <img src="img-artists/김효연_main.jpg" alt="김효연" class="img-fluid tm-slider-img">
+                                                                  <div class="artist-name">김효연</div>
+                                                                </a>
+                                                              </div>
+                                                              <div class="artist-item">
+                                                                <a href="#" class="tm-slider-img-link" onclick="openTeamPopup(event, '송수현')" data-artist="송수현">
+                                                                  <img src="img-artists/송수현_main.jpg" alt="송수현" class="img-fluid tm-slider-img">
+                                                                  <div class="artist-name">송수현</div>
+                                                                </a>
+                                                              </div>
+                                                              <div class="artist-item">
+                                                                <a href="#" class="tm-slider-img-link" onclick="openTeamPopup(event, '유이솔')" data-artist="유이솔">
+                                                                  <img src="img-artists/유이솔_main.jpg" alt="유이솔" class="img-fluid tm-slider-img">
+                                                                  <div class="artist-name">유이솔</div>
+                                                                </a>
+                                                              </div>
+                                                              <div class="artist-item">
+                                                                <a href="#" class="tm-slider-img-link" onclick="openTeamPopup(event, '이윤호')" data-artist="이윤호">
+                                                                  <img src="img-artists/이윤호_main.jpg" alt="이윤호" class="img-fluid tm-slider-img">
+                                                                  <div class="artist-name">이윤호</div>
+                                                                </a>
+                                                              </div>
+                                                              <div class="artist-item">
+                                                                <a href="#" class="tm-slider-img-link" onclick="openTeamPopup(event, '채하진')" data-artist="채하진">
+                                                                  <img src="img-artists/채하진_main.jpg" alt="채하진" class="img-fluid tm-slider-img">
+                                                                  <div class="artist-name">채하진</div>
+                                                                </a>
+                                                              </div>
+                                                              <div class="artist-item">
+                                                                <a href="#" class="tm-slider-img-link" onclick="openTeamPopup(event, '최건')" data-artist="최건">
+                                                                  <img src="img-artists/최건_main.jpg" alt="최건" class="img-fluid tm-slider-img">
+                                                                  <div class="artist-name">최건</div>
+                                                                </a>
+                                                              </div>
+                                                            </div>
+                                                        </div>  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>       
+                                    </div>
+                                </div>
+
+                                <div class="grid__item" id="audition-link">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-microphone fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Audition</span>
+                                            <div class="product__bg"></div>        
+                                        </div>                                    
+                                        <div class="product__description">
+                                            <div class="row mb-3">
+                                                <div class="col-12">
+                                                    <h2 class="tm-page-title">Arclead Audition</h2>        
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <div class="col-12 text-center">
+                                                    <p class="lead">아크리드 엔터테인먼트에서 <strong>"꿈이 있고, 열정이 가득한 신인연기자"</strong>를 모집 합니다.</p>
+                                                    <p class="mb-4">저희와 함께 성장하고 싶은 그대를 모두 환영입니다.</p>
+                                                </div>
+                                            </div>                                       
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <h5 class="mb-3">📋 오디션 안내</h5>
+                                                    <div class="audition-info mb-3">
+                                                        <p><strong>🎯 지원 부문:</strong> 연기자</p>
+                                                        <p><strong>👥 지원 자격:</strong> 성별, 연령, 국적 제한 없음</p>
+                                                        <p><strong>📧 접수 방법:</strong> 접수 메일 주소로 지원서 및 개별 프로필을 첨부하여 전송</p>
+                                                        <p><strong>📎 필수 제출:</strong></p>
+                                                        <ul class="ml-3">
+                                                            <li>개별 프로필 파일 (PDF, PPT)</li>
+                                                            <li>출연영상 혹은 자유연기 영상 (영상파일, 링크 모두 가능)</li>
+                                                        </ul>
+                                                        <p><strong>✉️ 접수 E-MAIL:</strong> <a href="mailto:arclead-ent@naver.com">arclead-ent@naver.com</a></p>
+                                                        <p class="text-muted small">※ 신인 여러분들의 많은 지원 부탁드립니다.</p>
+                                                        <p class="text-muted small">※ 1차 서류전형 응시 합격자에 한해 개별 통보해 드리며, 불합격자는 따로 통보해드리지 않는 점 양해 부탁드립니다.</p>
+                                                    </div>
+                                                    <img src="img/com_img/audition_description.png" class="img-fluid">
+                                                </div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                                    <h5 class="mb-3">🔄 오디션 프로세스</h5>
+                                                    <div class="process-info mb-3">
+                                                        <div class="process-step mb-2">
+                                                            <strong>1️⃣ 1차 서류 심사</strong>
+                                                            <p class="small text-muted">E-MAIL 접수를 통한 서류심사</p>
+                                                        </div>
+                                                        <div class="process-step mb-2">
+                                                            <strong>2️⃣ 2차 면접</strong>
+                                                            <p class="small text-muted">1차 심사 통과인원을 대상으로 오프라인 심사 및 면접</p>
+                                                        </div>
+                                                        <div class="process-step mb-2">
+                                                            <strong>3️⃣ 최종면접</strong>
+                                                            <p class="small text-muted">2차 합격자를 중심으로 임원진과의 최종면접</p>
+                                                        </div>
+                                                        <div class="process-step mb-3">
+                                                            <strong>4️⃣ 최종합격</strong>
+                                                            <p class="small text-muted">최종면접 합격자에 한해 개별 연락</p>
+                                                        </div>
+                                                    </div>
+                                                    <img src="img/com_img/audition_process.png" class="img-fluid">
+                                                </div>                                        
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__item" id="team-link" style="display: none;">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-users fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Our Team</span>
+                                            <div class="product__bg"></div>            
+                                        </div>                                     
+                                        <div class="product__description">
+                                            <!-- 동적으로 내용이 채워질 영역 -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="grid__item">
+                                    <div class="product">
+                                        <div class="tm-nav-link">
+                                            <i class="fas fa-comments fa-3x tm-nav-icon"></i>
+                                            <span class="tm-nav-text">Contact</span>
+                                            <div class="product__bg"></div>             
+                                        </div>                                                              
+                                        <div class="product__description">
+                                            <div class="pt-sm-4 pb-sm-4 pl-sm-5 pr-sm-5 pt-2 pb-2 pl-3 pr-3">
+                                                <div class="row mb-3">
+                                                    <div class="col-12">
+                                                        <h2 class="tm-page-title">Contact Us</h2>        
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-4">
+                                                    <div class="col-12">
+                                                        <p>Lorem ipsum dolor site amet, consectetur adipiscing elit. Aliquam interdum, nisl sed faucibus tempor, massa velit laoreet ipsum, et faucibus sapien magna at enim. Suspendisse a dictum tortor, vel rhoncus libero.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <form action="index.html" method="post" class="contact-form">
+                                                            <div class="row">
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6">
+                                                                  <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"  required/>
+                                                                </div>
+                                                                <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                                                                  <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email"  required/>
+                                                                </div>
+                                                            </div>                                                        
+                                                            <div class="form-group">
+                                                              <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required></textarea>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary tm-btn-submit">Submit</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>                       
+                    </div>
+                </div>                
+            </div>
+            <footer>
+                <p class="small tm-copyright-text">Copyright &copy; <span class="tm-current-year">2024</span> Arclead Entertainment. All rights reserved.</p>
+            </footer>
+        </div> <!-- .tm-main-content -->  
+    </div>
+    <!-- load JS -->
+    <script src="js/jquery-3.2.1.slim.min.js"></script>         <!-- https://jquery.com/ -->    
+    <script src="slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->  
+    <script src="js/anime.min.js"></script>                     <!-- http://animejs.com/ -->
+    <script src="js/main.js"></script>  
+    <script>      
+
+        // 아티스트별 필모그래피 데이터
+        const artistData = {
+            '김시경': {
+                title: '김시경 - 아크리드 아티스트',
+                filmography: {
+                    dramas: [
+                        { year: '2024', title: '스물다섯 스물하나', role: '주연', channel: 'tvN' },
+                        { year: '2023', title: '이상한 변호사 우영우', role: '조연', channel: 'ENA' },
+                        { year: '2022', title: '사랑의 불시착', role: '특별출연', channel: 'SBS' }
+                    ],
+                    movies: [
+                        { year: '2024', title: '서울의 봄', role: '주연' },
+                        { year: '2023', title: '콘크리트 유토피아', role: '조연' }
+                    ],
+                    commercials: [
+                        { year: '2024', title: 'LG 생활건강 - 오휘', type: '화장품' },
+                        { year: '2023', title: '삼성전자 - 갤럭시', type: '전자제품' }
+                    ]
+                }
+            },
+            '김효연': {
+                title: '김효연 - 아크리드 아티스트',
+                filmography: {
+                    dramas: [
+                        { year: '2024', title: '눈물의 여왕', role: '주연', channel: 'tvN' },
+                        { year: '2023', title: '더 글로리', role: '주연', channel: 'Netflix' },
+                        { year: '2022', title: '사내맞선', role: '조연', channel: 'SBS' }
+                    ],
+                    movies: [
+                        { year: '2024', title: '파묘', role: '주연' },
+                        { year: '2023', title: '아가씨', role: '조연' }
+                    ],
+                    commercials: [
+                        { year: '2024', title: '아모레퍼시픽 - 설화수', type: '화장품' },
+                        { year: '2023', title: '현대자동차 - 아이오닉', type: '자동차' }
+                    ]
+                }
+            },
+            '송수현': {
+                title: '송수현 - 아크리드 아티스트',
+                filmography: {
+                    dramas: [
+                        { year: '2024', title: '재벌집 막내아들', role: '주연', channel: 'JTBC' },
+                        { year: '2023', title: '악의 꽃', role: '조연', channel: 'tvN' },
+                        { year: '2022', title: '빈센조', role: '특별출연', channel: 'tvN' }
+                    ],
+                    movies: [
+                        { year: '2024', title: '12.12: 서울의 봄', role: '조연' },
+                        { year: '2023', title: '범죄도시 3', role: '주연' }
+                    ],
+                    commercials: [
+                        { year: '2024', title: 'SK텔레콤 - T다이렉트샵', type: '통신' },
+                        { year: '2023', title: '롯데제과 - 가나초콜릿', type: '식품' }
+                    ]
+                }
+            },
+            '유이솔': {
+                title: '유이솔 - 아크리드 아티스트',
+                filmography: {
+                    dramas: [
+                        { year: '2024', title: '선재 업고 튀어', role: '주연', channel: 'tvN' },
+                        { year: '2023', title: '힘쎈여자 강남순', role: '조연', channel: 'JTBC' },
+                        { year: '2022', title: '사이코지만 괜찮아', role: '특별출연', channel: 'tvN' }
+                    ],
+                    movies: [
+                        { year: '2024', title: '탈주', role: '주연' },
+                        { year: '2023', title: '콘크리트 유토피아', role: '조연' }
+                    ],
+                    commercials: [
+                        { year: '2024', title: '이니스프리 - 그린티', type: '화장품' },
+                        { year: '2023', title: 'CU편의점 - 런칭', type: '리테일' }
+                    ]
+                }
+            },
+            '이윤호': {
+                title: '이윤호 - 아크리드 아티스트',
+                filmography: {
+                    dramas: [
+                        { year: '2024', title: '마이 데몬', role: '주연', channel: 'SBS' },
+                        { year: '2023', title: '이태원 클라쓰', role: '조연', channel: 'JTBC' },
+                        { year: '2022', title: '김비서가 왜 그럴까', role: '특별출연', channel: 'tvN' }
+                    ],
+                    movies: [
+                        { year: '2024', title: '스위트 홈', role: '주연' },
+                        { year: '2023', title: '올드보이', role: '조연' }
+                    ],
+                    commercials: [
+                        { year: '2024', title: '네이버 - 네이버페이', type: '핀테크' },
+                        { year: '2023', title: '맥도날드 - 빅맥', type: '식품' }
+                    ]
+                }
+            },
+            '채하진': {
+                title: '채하진 - 아크리드 아티스트',
+                filmography: {
+                    dramas: [
+                        { year: '2024', title: '슬기로운 캠핑생활', role: '주연', channel: 'tvN' },
+                        { year: '2023', title: '스카이캐슬', role: '조연', channel: 'JTBC' },
+                        { year: '2022', title: '부부의 세계', role: '특별출연', channel: 'JTBC' }
+                    ],
+                    movies: [
+                        { year: '2024', title: '아가씨', role: '주연' },
+                        { year: '2023', title: '기생충', role: '조연' }
+                    ],
+                    commercials: [
+                        { year: '2024', title: '신세계백화점 - S.I.VILLAGE', type: '리테일' },
+                        { year: '2023', title: '코카콜라 - 코카콜라 제로', type: '음료' }
+                    ]
+                }
+            },
+            '최건': {
+                title: '최건 - 아크리드 아티스트',
+                filmography: {
+                    dramas: [
+                        { year: '2024', title: '밤에 피는 꽃', role: '주연', channel: 'MBC' },
+                        { year: '2023', title: '상속자들', role: '조연', channel: 'SBS' },
+                        { year: '2022', title: '치킨너겟의 꿈', role: '특별출연', channel: 'tvN' }
+                    ],
+                    movies: [
+                        { year: '2024', title: '범죄도시 4', role: '주연' },
+                        { year: '2023', title: '서울의 봄', role: '조연' }
+                    ],
+                    commercials: [
+                        { year: '2024', title: 'KT - 5G 요금제', type: '통신' },
+                        { year: '2023', title: '농심 - 신라면', type: '식품' }
+                    ]
+                }
+            }
+        };
+
+        // 아티스트별 갤러리 이미지 목록
+        const artistGalleryImages = {
+            '김시경': [
+                '231107_김시경 개인작업 2차2414.jpg',
+                '231107_김시경 개인작업 2차2553.jpg',
+                '231107_김시경 개인작업 2차5207 copy.jpg',
+                '231107_김시경 개인작업 2차5297.jpg',
+                '240124_김시경개인작업_3차_0277.jpg',
+                '240124_김시경개인작업_3차_0418.jpg',
+                '240124_김시경개인작업_3차_0622.jpg',
+                '240124_김시경개인작업_3차_0748.jpg'
+            ],
+            '김효연': [
+                'KakaoTalk_20250402_144141208_01.jpg',
+                'KakaoTalk_20250402_144141208_02.jpg',
+                'KakaoTalk_20250402_144141208_03.jpg',
+                'KakaoTalk_20250402_144141208_04.jpg',
+                'KakaoTalk_20250402_144141208.jpg',
+                'KakaoTalk_20250402_144144471.jpg'
+            ],
+            '송수현': [
+                'KakaoTalk_20240624_160747682_03.jpg',
+                'KakaoTalk_20240624_160747682_07.jpg',
+                'KakaoTalk_20240624_160747682_10.jpg',
+                'KakaoTalk_20240624_160747682_11.jpg',
+                'KakaoTalk_20240704_194631192_01.jpg',
+                'KakaoTalk_20240704_194631192_02.jpg',
+                'KakaoTalk_20240704_194631192_03.jpg',
+                'KakaoTalk_20240704_194631192_04.jpg'
+            ],
+            '유이솔': [
+                'KakaoTalk_20240604_095722639_01.jpg',
+                'KakaoTalk_20240604_095722639_02.jpg',
+                'KakaoTalk_20240604_095722639_03.jpg',
+                'KakaoTalk_20240604_095722639_04.jpg',
+                'KakaoTalk_20250228_233110889_02.jpg',
+                'KakaoTalk_20250228_233110889_03.jpg',
+                'KakaoTalk_20250527_123644466_03.jpg'
+            ],
+            '이윤호': [
+                'KakaoTalk_20250411_230233434.jpg',
+                'KakaoTalk_20250411_230236365.jpg',
+                'KakaoTalk_20250411_230238879.jpg',
+                'KakaoTalk_20250411_230241213.jpg',
+                'KakaoTalk_20250411_230243606.jpg'
+            ],
+            '채하진': [
+                '0923 하진님8285.jpg',
+                '0923 하진님8304.jpg',
+                '0923 하진님8433 복사.jpg',
+                '0923 하진님8531wn 복사.jpg',
+                '240613_채하진_0136 copy.jpg',
+                '240613_채하진_0433 copy.jpg',
+                '240613_채하진_0434 copy.jpg',
+                '240613_채하진_0552 copy.jpg'
+            ],
+            '최건': [
+                'KakaoTalk_20231031_123043753_01.jpg',
+                'KakaoTalk_20231031_123043753_02.jpg',
+                'KakaoTalk_20231031_123043753_03.jpg',
+                'KakaoTalk_20231031_123043753_04.jpg',
+                'KakaoTalk_20240930_124236166_03.jpg',
+                'KakaoTalk_20240930_124236166_04.jpg',
+                'KakaoTalk_20240930_124236166_05.jpg',
+                'KakaoTalk_20240930_124236166_06.jpg'
+            ]
+        };
+
+        // 아티스트 갤러리 토글 함수
+        function toggleArtistGallery(artistName, event) {
+            event.preventDefault();
+            
+            console.log('🖼️ 갤러리 토글:', artistName);
+            
+            const galleryDiv = document.getElementById(`artist-gallery-${artistName}`);
+            const imagesDiv = document.getElementById(`gallery-images-${artistName}`);
+            
+            if (!galleryDiv || !imagesDiv) {
+                console.error('❌ 갤러리 요소를 찾을 수 없음');
+                return;
+            }
+            
+            if (galleryDiv.style.display === 'none') {
+                // 갤러리 보이기
+                console.log('✅ 갤러리 표시');
+                
+                // 이미지들 추가
+                if (artistGalleryImages[artistName]) {
+                    const images = artistGalleryImages[artistName];
+                    let imageHTML = '';
+                    
+                    images.forEach(imageName => {
+                        imageHTML += `
+                            <div class="col-md-3 col-sm-6 mb-3">
+                                <img src="img-artists/${artistName}/${imageName}" class="img-fluid" style="border-radius: 8px; cursor: pointer;" onclick="openImageModal('img-artists/${artistName}/${imageName}')">
+                            </div>
+                        `;
+                    });
+                    
+                    imagesDiv.innerHTML = imageHTML;
+                    console.log(`✅ ${images.length}개 이미지 추가됨`);
+                }
+                
+                galleryDiv.style.display = 'block';
+                event.target.textContent = 'Hide Gallery';
+            } else {
+                // 갤러리 숨기기
+                console.log('✅ 갤러리 숨김');
+                galleryDiv.style.display = 'none';
+                event.target.textContent = 'Read More';
+            }
+        }
+
+        // 이미지 모달 열기 함수 (간단한 구현)
+        function openImageModal(imageSrc) {
+            console.log('🖼️ 이미지 모달 열기:', imageSrc);
+            
+            // 간단한 이미지 모달 생성
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            `;
+            
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+            `;
+            
+            modal.appendChild(img);
+            document.body.appendChild(modal);
+            
+            // 클릭하면 모달 닫기
+            modal.addEventListener('click', () => {
+                document.body.removeChild(modal);
+            });
+        }
+
+        function setupFooter() {
+            var pageHeight = $('.tm-site-header-container').height() + $('footer').height() + 100;
+
+            var main = $('.tm-main-content');
+
+            if($(window).height() < pageHeight) {
+                main.addClass('tm-footer-relative');
+            }
+            else {
+                main.removeClass('tm-footer-relative');   
+            }
+        }
+
+        function openTeamPopup(event, artistName) {
+            event.preventDefault();
+            event.stopPropagation();
+            
+            console.log('🔍 openTeamPopup 호출됨:', artistName);
+            
+            // URL 해시 변경
+            window.location.hash = artistName;
+            console.log('📍 URL 해시 변경됨:', window.location.hash);
+            
+            // 먼저 원본 DOM에 내용 설정
+            updateTeamContent();
+            
+            // 팝업 열기
+            const teamSection = document.getElementById('team-link');
+            if (teamSection) {
+                const productElement = teamSection.querySelector('.product');
+                if (productElement) {
+                    console.log('✅ product 요소 찾음, 클릭 이벤트 트리거');
+                    const clickEvent = new Event('click', { bubbles: true });
+                    productElement.dispatchEvent(clickEvent);
+                    
+                    // 팝업이 열릴 때까지 기다린 후 내용 변경
+                    waitForPopupAndUpdate(artistName);
+                }
+            }
+        }
+
+        // 팝업이 열릴 때까지 기다리고 내용 업데이트
+        function waitForPopupAndUpdate(artistName) {
+            console.log('⏳ 팝업이 열릴 때까지 기다리는 중...');
+            
+            let attempts = 0;
+            const maxAttempts = 30; // 최대 1.5초 대기
+            
+            const checkInterval = setInterval(() => {
+                attempts++;
+                console.log(`🔍 팝업 체크 시도 ${attempts}/${maxAttempts}`);
+                
+                // 팝업이 열렸는지 확인
+                const popup = document.querySelector('.details--open');
+                const popupDescription = document.querySelector('.details__description');
+                
+                if (popup && popupDescription) {
+                    console.log('✅ 팝업이 열렸음! 내용 업데이트 시작');
+                    clearInterval(checkInterval);
+                    
+                    // 바로 내용 변경 (애니메이션 대기 시간 단축)
+                    setTimeout(() => {
+                        updatePopupContent(artistName);
+                    }, 50);
+                    
+                } else if (attempts >= maxAttempts) {
+                    console.error('❌ 팝업 대기 시간 초과');
+                    clearInterval(checkInterval);
+                } else {
+                    console.log('⏳ 팝업 아직 준비되지 않음, 계속 대기...');
+                }
+            }, 50); // 50ms마다 체크 (더 빠른 감지)
+        }
+
+        // 팝업 내용 업데이트 함수
+        function updatePopupContent(artistName) {
+            console.log('🎯 팝업 내용 업데이트 시작:', artistName);
+            
+            const popupDescription = document.querySelector('.details__description');
+            if (!popupDescription) {
+                console.error('❌ 팝업 description 요소를 찾을 수 없음');
+                return;
+            }
+            
+            console.log('✅ 팝업 description 요소 찾음');
+            
+            if (artistData[artistName]) {
+                const filmography = artistData[artistName].filmography;
+                
+                // 드라마 목록 생성
+                let dramasHTML = '';
+                if (filmography.dramas && filmography.dramas.length > 0) {
+                    filmography.dramas.forEach(drama => {
+                        dramasHTML += `
+                            <tr>
+                                <td>${drama.year}</td>
+                                <td>${drama.title}</td>
+                                <td>${drama.role}</td>
+                                <td>${drama.channel}</td>
+                            </tr>
+                        `;
+                    });
+                }
+
+                // 영화 목록 생성
+                let moviesHTML = '';
+                if (filmography.movies && filmography.movies.length > 0) {
+                    filmography.movies.forEach(movie => {
+                        moviesHTML += `
+                            <tr>
+                                <td>${movie.year}</td>
+                                <td>${movie.title}</td>
+                                <td>${movie.role}</td>
+                                <td>-</td>
+                            </tr>
+                        `;
+                    });
+                }
+
+                // 광고 목록 생성
+                let commercialsHTML = '';
+                if (filmography.commercials && filmography.commercials.length > 0) {
+                    filmography.commercials.forEach(commercial => {
+                        commercialsHTML += `
+                            <tr>
+                                <td>${commercial.year}</td>
+                                <td>${commercial.title}</td>
+                                <td>-</td>
+                                <td>${commercial.type}</td>
+                            </tr>
+                        `;
+                    });
+                }
+                
+                popupDescription.innerHTML = `
+                    <div class="p-sm-4 p-2">
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <h2 class="tm-page-title">${artistName} - 아크리드 아티스트</h2>        
+                            </div>
+                        </div>
+                        <div class="row tm-reverse-sm">
+                            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div class="filmography-section">
+                                    <h5 class="mb-3">📺 드라마</h5>
+                                    <div class="table-responsive mb-4">
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>연도</th>
+                                                    <th>작품명</th>
+                                                    <th>역할</th>
+                                                    <th>방송사</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                ${dramasHTML}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <h5 class="mb-3">🎬 영화</h5>
+                                    <div class="table-responsive mb-4">
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>연도</th>
+                                                    <th>작품명</th>
+                                                    <th>역할</th>
+                                                    <th>-</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                ${moviesHTML}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <h5 class="mb-3">📢 광고</h5>
+                                    <div class="table-responsive mb-4">
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>연도</th>
+                                                    <th>브랜드</th>
+                                                    <th>-</th>
+                                                    <th>분야</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                ${commercialsHTML}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn tm-btn-gray" onclick="toggleArtistGallery('${artistName}', event)">포트폴리오 갤러리</a>        
+                            </div>                                                
+                            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-lg-0 mb-sm-4 mb-4">
+                                <img src="img-artists/${artistName}_main.jpg" class="img-fluid">
+                            </div>
+                        </div>
+                        <div id="artist-gallery-${artistName}" class="row mt-4" style="display: none;">
+                            <div class="col-12">
+                                <h4 class="mb-3">${artistName} 포트폴리오 갤러리</h4>
+                                <div class="row" id="gallery-images-${artistName}">
+                                    <!-- 갤러리 이미지들이 동적으로 추가될 영역 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                console.log('✅ 팝업 아티스트 내용 변경 완료');
+            } else {
+                popupDescription.innerHTML = `
+                    <div class="p-sm-4 p-2">
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <h2 class="tm-page-title">Background of Our Team</h2>        
+                            </div>
+                        </div>
+                        <div class="row tm-reverse-sm">
+                            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <p class="mb-4">Vestibulum aliquet, arcu accumsan lobortis bibendum, justo velit efficitur lorem, at pulvinar mi justo nec lacus. Nullam et libero aliquet, luctus nunc sit amet, tincidunt ligula. Sed finibus ante sed tortor cursus, nec malesuada lectus interdum.</p>
+                                <p class="mb-4">Sed ex turpis, vulputate in efficitur id, lobortis eget nibh. Pellentesque maximus ipsum eget velit imperdiet sodales. Suspendisse in blandit mi.</p>
+                                <p class="mb-5">Pellentesque finibus felis risus, ut malesuada felis viverra at. Quisque accumsan in mi non hendrerit.</p>
+                                <a href="#" class="btn tm-btn-gray">Read More</a>        
+                            </div>                                                
+                            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-lg-0 mb-sm-4 mb-4">
+                                <img src="img/team.jpg" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                console.log('✅ 팝업 기본 내용 설정 완료');
+            }
+        }
+
+        // 팀 내용 업데이트 함수 (항상 동적으로 채움)
+        function updateTeamContent() {
+            let hash = window.location.hash.substring(1); // # 제거
+            hash = decodeURIComponent(hash); // URL 디코딩
+            
+            console.log('🔄 updateTeamContent 호출됨, 해시:', hash);
+            
+            const teamSection = document.getElementById('team-link');
+            if (!teamSection) {
+                console.error('❌ team-link 섹션을 찾을 수 없음');
+                return;
+            }
+            
+            const descriptionElement = teamSection.querySelector('.product__description');
+            if (!descriptionElement) {
+                console.error('❌ product__description 요소를 찾을 수 없음');
+                return;
+            }
+            
+            // 아티스트 데이터 확인
+            if (artistData[hash]) {
+                console.log('✅ 아티스트 데이터 찾음:', hash);
+                
+                const filmography = artistData[hash].filmography;
+                
+                // 드라마 목록 생성
+                let dramasHTML = '';
+                if (filmography.dramas && filmography.dramas.length > 0) {
+                    filmography.dramas.forEach(drama => {
+                        dramasHTML += `
+                            <tr>
+                                <td>${drama.year}</td>
+                                <td>${drama.title}</td>
+                                <td>${drama.role}</td>
+                                <td>${drama.channel}</td>
+                            </tr>
+                        `;
+                    });
+                }
+
+                // 영화 목록 생성
+                let moviesHTML = '';
+                if (filmography.movies && filmography.movies.length > 0) {
+                    filmography.movies.forEach(movie => {
+                        moviesHTML += `
+                            <tr>
+                                <td>${movie.year}</td>
+                                <td>${movie.title}</td>
+                                <td>${movie.role}</td>
+                                <td>-</td>
+                            </tr>
+                        `;
+                    });
+                }
+
+                // 광고 목록 생성
+                let commercialsHTML = '';
+                if (filmography.commercials && filmography.commercials.length > 0) {
+                    filmography.commercials.forEach(commercial => {
+                        commercialsHTML += `
+                            <tr>
+                                <td>${commercial.year}</td>
+                                <td>${commercial.title}</td>
+                                <td>-</td>
+                                <td>${commercial.type}</td>
+                            </tr>
+                        `;
+                    });
+                }
+                
+                descriptionElement.innerHTML = `
+                    <div class="p-sm-4 p-2">
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <h2 class="tm-page-title">${hash} - 아크리드 아티스트</h2>        
+                            </div>
+                        </div>
+                        <div class="row tm-reverse-sm">
+                            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <div class="filmography-section">
+                                    <h5 class="mb-3">📺 드라마</h5>
+                                    <div class="table-responsive mb-4">
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>연도</th>
+                                                    <th>작품명</th>
+                                                    <th>역할</th>
+                                                    <th>방송사</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                ${dramasHTML}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <h5 class="mb-3">🎬 영화</h5>
+                                    <div class="table-responsive mb-4">
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>연도</th>
+                                                    <th>작품명</th>
+                                                    <th>역할</th>
+                                                    <th>-</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                ${moviesHTML}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                    <h5 class="mb-3">📢 광고</h5>
+                                    <div class="table-responsive mb-4">
+                                        <table class="table table-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>연도</th>
+                                                    <th>브랜드</th>
+                                                    <th>-</th>
+                                                    <th>분야</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                ${commercialsHTML}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn tm-btn-gray">포트폴리오 갤러리</a>        
+                            </div>                                                
+                            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-lg-0 mb-sm-4 mb-4">
+                                <img src="img-artists/${hash}_main.jpg" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                console.log('✅ 아티스트 내용으로 변경 완료');
+            } else {
+                console.log('⚠️ 아티스트 데이터 없음, 기본 내용으로 설정');
+                
+                descriptionElement.innerHTML = `
+                    <div class="p-sm-4 p-2">
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <h2 class="tm-page-title">Background of Our Team</h2>        
+                            </div>
+                        </div>
+                        <div class="row tm-reverse-sm">
+                            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                                <p class="mb-4">Vestibulum aliquet, arcu accumsan lobortis bibendum, justo velit efficitur lorem, at pulvinar mi justo nec lacus. Nullam et libero aliquet, luctus nunc sit amet, tincidunt ligula. Sed finibus ante sed tortor cursus, nec malesuada lectus interdum.</p>
+                                <p class="mb-4">Sed ex turpis, vulputate in efficitur id, lobortis eget nibh. Pellentesque maximus ipsum eget velit imperdiet sodales. Suspendisse in blandit mi.</p>
+                                <p class="mb-5">Pellentesque finibus felis risus, ut malesuada felis viverra at. Quisque accumsan in mi non hendrerit.</p>
+                                <a href="#" class="btn tm-btn-gray">Read More</a>        
+                            </div>                                                
+                            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-lg-0 mb-sm-4 mb-4">
+                                <img src="img/team.jpg" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                console.log('✅ 기본 내용으로 설정 완료');
+            }
+        }
+
+        // URL 해시 변경 감지 및 콘텐츠 업데이트
+        function updateContentBasedOnHash() {
+            console.log('🔄 updateContentBasedOnHash 호출됨');
+            updateTeamContent();
+        }
+
+        // 실시간 해시 변경 감지
+        function startHashWatcher() {
+            let currentHash = window.location.hash;
+            
+            // 주기적으로 해시 변경 확인
+            setInterval(() => {
+                if (window.location.hash !== currentHash) {
+                    console.log('🔄 실시간 해시 변경 감지:', currentHash, '→', window.location.hash);
+                    currentHash = window.location.hash;
+                    updateContentBasedOnHash();
+                }
+            }, 100); // 100ms마다 체크
+        }
+
+        /* DOM is ready
+        ------------------------------------------------*/
+        $(function(){
+            console.log('🚀 DOM 로드 완료');
+
+            setupFooter();
+
+            $(window).resize(function(){
+                setupFooter();
+            });
+
+            $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright
+            
+            // 페이지 로드 시 초기 내용 동적 설정
+            console.log('🔍 초기 해시 확인:', window.location.hash);
+            updateTeamContent();
+            
+            // Our Team 직접 클릭 시 기본 내용 표시
+            const teamLink = document.getElementById('team-link');
+            if (teamLink) {
+                const teamProduct = teamLink.querySelector('.product');
+                if (teamProduct) {
+                    teamProduct.addEventListener('click', function(event) {
+                        console.log('🎯 Our Team 직접 클릭됨');
+                        // 해시가 없으면 기본 내용 설정
+                        if (!window.location.hash || !artistData[decodeURIComponent(window.location.hash.substring(1))]) {
+                            updateTeamContent();
+                        }
+                    });
+                }
+            }
+            
+            // 해시 변경 감지 (기존 방식)
+            window.addEventListener('hashchange', function() {
+                console.log('🔄 해시 변경 감지됨:', window.location.hash);
+                updateContentBasedOnHash();
+            });
+            
+            // 실시간 해시 감지 시작
+            startHashWatcher();
+            
+            console.log('📊 사용 가능한 아티스트:', Object.keys(artistData));
+        });
+
+    </script>             
+
+</body>
+</html>
