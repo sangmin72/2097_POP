@@ -1,0 +1,15 @@
+# 큰 이미지 파일들 (25MB 초과)
+img-artists/김시경/240124_김시경개인작업_3차_0277.jpg
+img-artists/김시경/240124_김시경개인작업_3차_0418.jpg
+img-artists/김시경/240124_김시경개인작업_3차_0622.jpg
+img-artists/김시경/240124_김시경개인작업_3차_0748.jpg
+
+# 모든 아티스트 이미지들 (R2로 이동 예정)
+img-artists/
+
+# 기타 대용량 파일들
+*.log
+*.tmp
+node_modules/
+.DS_Store
+Thumbs.db

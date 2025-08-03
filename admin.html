@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arclead Entertainment - 관리자</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .admin-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px 15px 0 0;
+        }
+        .artist-card {
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .artist-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .photo-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .photo-actions {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+            gap: 5px;
+        }
+        .main-photo-badge {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            background: #28a745;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        .upload-area {
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .upload-area:hover {
+            border-color: #667eea;
+            background-color: #f8f9ff;
+        }
+        .filmography-table {
+            margin-top: 20px;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="header">
+            <h1><i class="fas fa-crown"></i> Arclead Entertainment 관리자</h1>
+            <p class="mb-0">아티스트 및 필모그래피 관리 시스템</p>
+        </div>
+        
+        <div class="p-4">
+            <!-- 아티스트 추가 버튼 -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3>아티스트 관리</h3>
+                <button class="btn btn-gradient" onclick="showAddArtistModal()">
+                    <i class="fas fa-plus"></i> 새 아티스트 추가
+                </button>
+            </div>
+            
+            <!-- 아티스트 목록 -->
+            <div id="artistsList" class="row">
+                <!-- 동적으로 생성됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 아티스트 추가/수정 모달 -->
+    <div class="modal fade" id="artistModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">아티스트 정보</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="artistForm">
+                        <input type="hidden" id="artistId">
+                        <div class="mb-3">
+                            <label class="form-label">아티스트 이름</label>
+                            <input type="text" class="form-control" id="artistName" required>
+                        </div>
+                        
+                        <!-- 필모그래피 섹션 -->
+                        <div class="mb-4">
+                            <h6>필모그래피</h6>
+                            
+                            <!-- 드라마 -->
+                            <div class="mb-3">
+                                <label class="form-label">📺 드라마</label>
+                                <div id="dramasList"></div>
+                                <button type="button" class="btn btn-sm btn-outline-primary" onclick="addFilmographyItem('dramas')">
+                                    <i class="fas fa-plus"></i> 드라마 추가
+                                </button>
+                            </div>
+                            
+                            <!-- 영화 -->
+                            <div class="mb-3">
+                                <label class="form-label">🎬 영화</label>
+                                <div id="moviesList"></div>
+                                <button type="button" class="btn btn-sm btn-outline-primary" onclick="addFilmographyItem('movies')">
+                                    <i class="fas fa-plus"></i> 영화 추가
+                                </button>
+                            </div>
+                            
+                            <!-- 광고 -->
+                            <div class="mb-3">
+                                <label class="form-label">📢 광고</label>
+                                <div id="commercialsList"></div>
+                                <button type="button" class="btn btn-sm btn-outline-primary" onclick="addFilmographyItem('commercials')">
+                                    <i class="fas fa-plus"></i> 광고 추가
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- 사진 업로드 -->
+                        <div class="mb-3">
+                            <label class="form-label">사진 업로드</label>
+                            <div class="upload-area" onclick="document.getElementById('photoUpload').click()">
+                                <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
+                                <p>클릭하여 사진을 업로드하세요</p>
+                                <small class="text-muted">JPG, PNG 파일만 지원됩니다</small>
+                            </div>
+                            <input type="file" id="photoUpload" class="d-none" multiple accept="image/*" onchange="handlePhotoUpload(event)">
+                        </div>
+                        
+                        <!-- 업로드된 사진들 -->
+                        <div id="photosGrid" class="photo-grid"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                    <button type="button" class="btn btn-gradient" onclick="saveArtist()">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const API_BASE = '/api'; // Cloudflare Workers API 엔드포인트
+        
+        let currentArtistId = null;
+        let artistPhotos = [];
+
+        // 페이지 로드 시 아티스트 목록 조회
+        document.addEventListener('DOMContentLoaded', function() {
+            loadArtists();
+        });
+
+        // 아티스트 목록 로드
+        async function loadArtists() {
+            try {
+                const response = await fetch(`${API_BASE}/artists`);
+                const artists = await response.json();
+                displayArtists(artists);
+            } catch (error) {
+                console.error('아티스트 목록 로드 실패:', error);
+                alert('아티스트 목록을 불러오는데 실패했습니다.');
+            }
+        }
+
+        // 아티스트 목록 표시
+        function displayArtists(artists) {
+            const artistsList = document.getElementById('artistsList');
+            artistsList.innerHTML = '';
+            
+            artists.forEach(artist => {
+                const artistCard = `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="artist-card p-3">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5>${artist.name}</h5>
+                                <div class="btn-group btn-group-sm">
+                                    <button class="btn btn-outline-primary" onclick="editArtist('${artist.id}')">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-outline-danger" onclick="deleteArtist('${artist.id}')">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <small class="text-muted">
+                                        드라마 ${artist.filmography?.dramas?.length || 0}편<br>
+                                        영화 ${artist.filmography?.movies?.length || 0}편<br>
+                                        광고 ${artist.filmography?.commercials?.length || 0}편
+                                    </small>
+                                </div>
+                                <div class="col-4">
+                                    ${artist.mainPhoto ? `<img src="${artist.mainPhoto}" class="img-fluid rounded" style="max-height: 60px;">` : '<div class="bg-light rounded d-flex align-items-center justify-content-center" style="height: 60px;"><i class="fas fa-user text-muted"></i></div>'}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                artistsList.innerHTML += artistCard;
+            });
+        }
+
+        // 새 아티스트 추가 모달
+        function showAddArtistModal() {
+            currentArtistId = null;
+            document.getElementById('artistForm').reset();
+            document.getElementById('artistId').value = '';
+            document.getElementById('dramasList').innerHTML = '';
+            document.getElementById('moviesList').innerHTML = '';
+            document.getElementById('commercialsList').innerHTML = '';
+            document.getElementById('photosGrid').innerHTML = '';
+            artistPhotos = [];
+            
+            const modal = new bootstrap.Modal(document.getElementById('artistModal'));
+            modal.show();
+        }
+
+        // 아티스트 편집
+        async function editArtist(artistId) {
+            try {
+                const response = await fetch(`${API_BASE}/artists/${artistId}`);
+                const artist = await response.json();
+                
+                currentArtistId = artistId;
+                document.getElementById('artistId').value = artistId;
+                document.getElementById('artistName').value = artist.name;
+                
+                // 필모그래피 로드
+                loadFilmography(artist.filmography);
+                
+                // 사진들 로드
+                loadArtistPhotos(artistId);
+                
+                const modal = new bootstrap.Modal(document.getElementById('artistModal'));
+                modal.show();
+            } catch (error) {
+                console.error('아티스트 정보 로드 실패:', error);
+                alert('아티스트 정보를 불러오는데 실패했습니다.');
+            }
+        }
+
+        // 필모그래피 로드
+        function loadFilmography(filmography) {
+            if (filmography) {
+                loadFilmographySection('dramas', filmography.dramas || []);
+                loadFilmographySection('movies', filmography.movies || []);
+                loadFilmographySection('commercials', filmography.commercials || []);
+            }
+        }
+
+        // 필모그래피 섹션 로드
+        function loadFilmographySection(type, items) {
+            const container = document.getElementById(`${type}List`);
+            container.innerHTML = '';
+            
+            items.forEach((item, index) => {
+                addFilmographyItem(type, item, index);
+            });
+        }
+
+        // 필모그래피 항목 추가
+        function addFilmographyItem(type, data = null, index = null) {
+            const container = document.getElementById(`${type}List`);
+            const itemIndex = index !== null ? index : container.children.length;
+            
+            let fields = '';
+            if (type === 'dramas') {
+                fields = `
+                    <input type="text" class="form-control mb-2" placeholder="연도" name="${type}[${itemIndex}][year]" value="${data?.year || ''}">
+                    <input type="text" class="form-control mb-2" placeholder="작품명" name="${type}[${itemIndex}][title]" value="${data?.title || ''}">
+                    <input type="text" class="form-control mb-2" placeholder="역할" name="${type}[${itemIndex}][role]" value="${data?.role || ''}">
+                    <input type="text" class="form-control mb-2" placeholder="방송사" name="${type}[${itemIndex}][channel]" value="${data?.channel || ''}">
+                `;
+            } else if (type === 'movies') {
+                fields = `
+                    <input type="text" class="form-control mb-2" placeholder="연도" name="${type}[${itemIndex}][year]" value="${data?.year || ''}">
+                    <input type="text" class="form-control mb-2" placeholder="작품명" name="${type}[${itemIndex}][title]" value="${data?.title || ''}">
+                    <input type="text" class="form-control mb-2" placeholder="역할" name="${type}[${itemIndex}][role]" value="${data?.role || ''}">
+                `;
+            } else if (type === 'commercials') {
+                fields = `
+                    <input type="text" class="form-control mb-2" placeholder="연도" name="${type}[${itemIndex}][year]" value="${data?.year || ''}">
+                    <input type="text" class="form-control mb-2" placeholder="브랜드명" name="${type}[${itemIndex}][title]" value="${data?.title || ''}">
+                    <input type="text" class="form-control mb-2" placeholder="분야" name="${type}[${itemIndex}][type]" value="${data?.type || ''}">
+                `;
+            }
+            
+            const itemHTML = `
+                <div class="border rounded p-3 mb-2">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h6 class="mb-0">${type === 'dramas' ? '드라마' : type === 'movies' ? '영화' : '광고'} #${itemIndex + 1}</h6>
+                        <button type="button" class="btn btn-sm btn-outline-danger" onclick="this.parentElement.parentElement.remove()">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    ${fields}
+                </div>
+            `;
+            
+            container.insertAdjacentHTML('beforeend', itemHTML);
+        }
+
+        // 사진 업로드 처리
+        async function handlePhotoUpload(event) {
+            const files = event.target.files;
+            
+            for (let file of files) {
+                if (!file.type.startsWith('image/')) {
+                    alert('이미지 파일만 업로드 가능합니다.');
+                    continue;
+                }
+                
+                try {
+                    const formData = new FormData();
+                    formData.append('photo', file);
+                    
+                    const response = await fetch(`${API_BASE}/artists/${currentArtistId || 'temp'}/photos`, {
+                        method: 'POST',
+                        body: formData
+                    });
+                    
+                    const result = await response.json();
+                    
+                    artistPhotos.push({
+                        id: result.photoId,
+                        url: result.url,
+                        isMain: false
+                    });
+                    
+                    displayPhotos();
+                } catch (error) {
+                    console.error('사진 업로드 실패:', error);
+                    alert('사진 업로드에 실패했습니다.');
+                }
+            }
+        }
+
+        // 아티스트 사진들 로드
+        async function loadArtistPhotos(artistId) {
+            try {
+                const response = await fetch(`${API_BASE}/artists/${artistId}/photos`);
+                artistPhotos = await response.json();
+                displayPhotos();
+            } catch (error) {
+                console.error('사진 로드 실패:', error);
+            }
+        }
+
+        // 사진들 표시
+        function displayPhotos() {
+            const photosGrid = document.getElementById('photosGrid');
+            photosGrid.innerHTML = '';
+            
+            artistPhotos.forEach((photo, index) => {
+                const photoHTML = `
+                    <div class="photo-item">
+                        <img src="${photo.url}" alt="Photo ${index + 1}">
+                        <div class="photo-actions">
+                            <button class="btn btn-sm btn-primary" onclick="setMainPhoto(${index})" title="대표 사진으로 설정">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button class="btn btn-sm btn-danger" onclick="deletePhoto(${index})" title="삭제">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        ${photo.isMain ? '<div class="main-photo-badge">대표</div>' : ''}
+                    </div>
+                `;
+                photosGrid.insertAdjacentHTML('beforeend', photoHTML);
+            });
+        }
+
+        // 대표 사진 설정
+        async function setMainPhoto(index) {
+            try {
+                artistPhotos.forEach((photo, i) => {
+                    photo.isMain = i === index;
+                });
+                
+                await fetch(`${API_BASE}/artists/${currentArtistId}/main-photo`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        photoId: artistPhotos[index].id
+                    })
+                });
+                
+                displayPhotos();
+            } catch (error) {
+                console.error('대표 사진 설정 실패:', error);
+                alert('대표 사진 설정에 실패했습니다.');
+            }
+        }
+
+        // 사진 삭제
+        async function deletePhoto(index) {
+            if (!confirm('이 사진을 삭제하시겠습니까?')) return;
+            
+            try {
+                const photoId = artistPhotos[index].id;
+                
+                await fetch(`${API_BASE}/artists/${currentArtistId}/photos/${photoId}`, {
+                    method: 'DELETE'
+                });
+                
+                artistPhotos.splice(index, 1);
+                displayPhotos();
+            } catch (error) {
+                console.error('사진 삭제 실패:', error);
+                alert('사진 삭제에 실패했습니다.');
+            }
+        }
+
+        // 아티스트 저장
+        async function saveArtist() {
+            try {
+                const formData = new FormData(document.getElementById('artistForm'));
+                const artistData = {
+                    name: document.getElementById('artistName').value,
+                    filmography: {
+                        dramas: [],
+                        movies: [],
+                        commercials: []
+                    }
+                };
+                
+                // 필모그래피 데이터 수집
+                ['dramas', 'movies', 'commercials'].forEach(type => {
+                    const container = document.getElementById(`${type}List`);
+                    const items = [];
+                    
+                    for (let i = 0; i < container.children.length; i++) {
+                        const item = {};
+                        const inputs = container.children[i].querySelectorAll('input');
+                        
+                        if (type === 'dramas') {
+                            item.year = inputs[0].value;
+                            item.title = inputs[1].value;
+                            item.role = inputs[2].value;
+                            item.channel = inputs[3].value;
+                        } else if (type === 'movies') {
+                            item.year = inputs[0].value;
+                            item.title = inputs[1].value;
+                            item.role = inputs[2].value;
+                        } else if (type === 'commercials') {
+                            item.year = inputs[0].value;
+                            item.title = inputs[1].value;
+                            item.type = inputs[2].value;
+                        }
+                        
+                        if (item.year && item.title) {
+                            items.push(item);
+                        }
+                    }
+                    
+                    artistData.filmography[type] = items;
+                });
+                
+                const method = currentArtistId ? 'PUT' : 'POST';
+                const url = currentArtistId ? `${API_BASE}/artists/${currentArtistId}` : `${API_BASE}/artists`;
+                
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(artistData)
+                });
+                
+                if (response.ok) {
+                    alert('아티스트 정보가 저장되었습니다.');
+                    bootstrap.Modal.getInstance(document.getElementById('artistModal')).hide();
+                    loadArtists();
+                } else {
+                    throw new Error('저장 실패');
+                }
+            } catch (error) {
+                console.error('아티스트 저장 실패:', error);
+                alert('아티스트 저장에 실패했습니다.');
+            }
+        }
+
+        // 아티스트 삭제
+        async function deleteArtist(artistId) {
+            if (!confirm('이 아티스트를 삭제하시겠습니까? 모든 데이터가 삭제됩니다.')) return;
+            
+            try {
+                const response = await fetch(`${API_BASE}/artists/${artistId}`, {
+                    method: 'DELETE'
+                });
+                
+                if (response.ok) {
+                    alert('아티스트가 삭제되었습니다.');
+                    loadArtists();
+                } else {
+                    throw new Error('삭제 실패');
+                }
+            } catch (error) {
+                console.error('아티스트 삭제 실패:', error);
+                alert('아티스트 삭제에 실패했습니다.');
+            }
+        }
+    </script>
+</body>
+</html>

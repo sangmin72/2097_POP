@@ -1,0 +1,8 @@
+# API 요청을 Workers로 라우팅
+/api/* https://your-worker-domain.workers.dev/api/:splat 200
+
+# admin.html을 /admin 경로로 접근
+/admin /admin.html 200
+
+# 기본 라우팅
+/* /index.html 200
